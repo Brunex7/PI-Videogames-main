@@ -1,11 +1,15 @@
-
+import style from './Card.module.css'
 
 const Card = (props) => {
     return(
-        <div>
-            <h1>{props.name}</h1>
-            <img src={props.image} alt={props.name} />
-            <p>Genres:{props.genres}</p>
+        <div className={style.card}>
+            <div className={style.imag}>
+                <img src={props.background_image} alt={props.name} />
+            </div>
+            <div className={style.text}>
+                <a href='/detail'>{props.name}</a>
+                <p>{props.genres}</p>
+            </div>
         </div>
     )
 }

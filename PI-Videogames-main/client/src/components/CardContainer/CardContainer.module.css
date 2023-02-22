@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(15, 15, 15);
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.13);
+    gap: 1em;
+    max-width: 1200px;
+    margin: 70px;
+}

@@ -1,6 +1,7 @@
 import {
         GET_ALL_GENRES,
-        GET_GAMES
+        GET_GAMES,
+        GET_DETAIL_GAMES
 } from './action';
 
 const initialState = {
@@ -18,7 +19,8 @@ const rootRoducer = (state = initialState, action ) =>{
                 ? {...state}
                 : {...state, allGenres: action.payload};    
             
-            
+        case GET_DETAIL_GAMES:
+            return{...state, detailGame: action.payload};    
             
             default:
                 return {...state}

@@ -1,0 +1,25 @@
+.mainContainer{
+    background-color: rgb(15, 15, 15);
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding:  5px;
+}
+.mainContainer h1{
+    display: flex;
+    margin: 10px;
+    color: whitesmoke;
+    
+}
+
+.links a{
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.links a:hover{
+    color: darkgray;
+}
