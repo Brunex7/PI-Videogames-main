@@ -13,11 +13,11 @@
 
 .nogr{
     display: flex;
-    background-color: rgb(34, 32, 32);
+    background-color: rgb(240, 169, 17);
     width: 80px;
     height: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 0 5px 0 5px;
-    color: rgb(160, 160, 160);
-    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.103);
+    border-radius: 5px;
+    color: rgb(24, 24, 24);
+    font-weight: 800;
 }
