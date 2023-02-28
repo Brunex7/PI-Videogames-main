@@ -54,7 +54,7 @@ const rootRoducer = (state = initialState, action ) =>{
             return {...state, games: action.payload === 'all' ? allGames : filterOring}
 
         case ORDER_BY_NAME:
-            const arrName = action.payload === 'asc'
+            let arrName = action.payload === 'asc'
             ? state.allVideogames.sort(function(a, b){
                 if(a.name < b.name){
                     return 1
