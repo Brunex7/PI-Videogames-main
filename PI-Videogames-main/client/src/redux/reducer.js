@@ -54,27 +54,27 @@ const rootRoducer = (state = initialState, action ) =>{
             return {...state, games: action.payload === 'all' ? allGames : filterOring}
 
         case ORDER_BY_NAME:
-            let arrName = action.payload === 'asc'
-            ? state.allVideogames.sort([function(a,b){
-                if(a.name > b.name) {
-                    return 1;
+            const arrName = action.payload === 'asc'
+            ? state.allVideogames.sort(function(a, b){
+                if(a.name < b.name){
+                    return 1
                 }
-                if(a.name < b.name) {
-                    return -1;
+                if(a.name > b.name){
+                    return -1
                 }
-                return 0;
-            }])
-            : state.allVideogames.sort([function(a,b){
-                if(a.name > b.name) {
-                    return -1;
+                return 0
+            })
+            : state.allVideogames.sort(function(a, b){
+                if(a.name > b.name){
+                    return -1
                 }
-                if(a.name < b.name) {
-                    return 1;
+                if(a.name < b.name){
+                    return 1
                 }
-                return 0;
-            }])
-            console.log(arrName);
-            return { ...state, games: arrName };
+                return 0
+            })
+            console.log(arrName)
+            return{...state, games: arrName}
 
         case ORDER_BY_RATING:
             let arrRating = action.payload === 'asc' 
@@ -97,7 +97,7 @@ const rootRoducer = (state = initialState, action ) =>{
                 return 0
             })
             console.log(arrRating);
-            return{ ...state, games: arrRating};
+            return{...state, games: arrRating};
 
             default:
                 return {...state};
