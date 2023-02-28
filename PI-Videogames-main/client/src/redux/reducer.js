@@ -12,20 +12,16 @@ import {
 
 const initialState = {
     games: [],
-    allGenres: [],
     detailGame: [],
-    genres: [],
-    filterGames:[],
-    orderBy: "Select",
-    filterBy: "All",
-    rating: [],
+    allGenres: [],
+    allVideogames: [],
 };
 
 
 const rootRoducer = (state = initialState, action ) =>{
     switch(action.type) {
         case GET_GAMES:
-            return {...state, games: action.payload};
+            return {...state, games: action.payload, allVideogames: action.payload};
 
         case POST_GAMES:
             return{...state,}
@@ -42,24 +38,24 @@ const rootRoducer = (state = initialState, action ) =>{
             return{...state, detailGame: action.payload};
         
         case FILTER_BY_GENRE:
-            const games = state.games;
+            const allVideogames = state.allVideogames;
             const filterGenres = action.payload === 'all'
-                ? games 
-                : games.filter((games) => games.genres.includes(action.payload )) 
+                ? allVideogames
+                : allVideogames.filter((game) => game.genres.includes(action.payload )) 
+                console.log(filterGenres);
             return {...state,  games: filterGenres};
 
         case FILTER_CREATED:
-            const allGames = state.games;
+            const allGames = state.allVideogames;
             const filterOring = 
                 action.payload === 'created'
-                    ? allGames.filter((e) => e.created)
-                    : allGames.filter((e) => !e.created)
-            return {...state, games: action.payload === 'all' ? state.allGames : filterOring,}
+                    ? allGames.filter((e) => e.created === true)
+                    : allGames.filter((e) => e.created === false)
+            return {...state, games: action.payload === 'all' ? allGames : filterOring}
 
         case ORDER_BY_NAME:
-            let arrName = 
-            action.payload === 'desc'
-            ? state.games.sort((a,b) =>{
+            let arrName = action.payload === 'asc'
+            ? state.allVideogames.sort([function(a,b){
                 if(a.name > b.name) {
                     return 1;
                 }
@@ -67,8 +63,8 @@ const rootRoducer = (state = initialState, action ) =>{
                     return -1;
                 }
                 return 0;
-            })
-            : state.games.sort((a,b) =>{
+            }])
+            : state.allVideogames.sort([function(a,b){
                 if(a.name > b.name) {
                     return -1;
                 }
@@ -76,34 +72,35 @@ const rootRoducer = (state = initialState, action ) =>{
                     return 1;
                 }
                 return 0;
-            })
-            return { ...state, games: arrName }
+            }])
+            console.log(arrName);
+            return { ...state, games: arrName };
 
         case ORDER_BY_RATING:
-            let arrRating = 
-            action.payload === 'desc'
-            ? state.games.sort((a,b) =>{
-                if(a.rating > b.rating) {
-                    return 1;
+            let arrRating = action.payload === 'asc' 
+            ? state.allVideogames.sort(function(a,b){
+                if(a.rating < b.rating){
+                    return -1
                 }
-                if(a.rating < b.rating) {
-                    return -1;
+                if(a.rating > b.rating){
+                    return 1
                 }
-                return 0;
+                return 0
+            }) 
+            : state.allVideogames.sort(function(a,b){
+                if(a.rating < b.rating){
+                    return 1
+                }
+                if(a.rating > b.rating){
+                    return -1
+                }
+                return 0
             })
-            : state.games.sort((a,b) =>{
-                if(a.rating > b.rating) {
-                    return -1;
-                }
-                if(a.rating < b.rating) {
-                    return 1;
-                }
-                return 0;
-            })
-            return { ...state, games: arrRating }
+            console.log(arrRating);
+            return{ ...state, games: arrRating};
 
             default:
-                return {...state}
+                return {...state};
     }
 }
 
