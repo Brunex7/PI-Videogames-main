@@ -1,5 +1,5 @@
 import style from './NavBar.module.css';
-import SearchBar from '../serchBar/searchBar';
+import SearchBar from '../serchBar/SearchBar';
 
 
 const NavBar = () =>{
@@ -9,7 +9,7 @@ const NavBar = () =>{
             <SearchBar/>
             <div className={style.links}>
                 <a href='/home'>HOME</a>
-                <a href='/create'>FORM</a>
+                <a href='/create'>POST GAMES</a>
             </div>
         </nav>
     )

@@ -1,45 +1,46 @@
-import React, { useEffect }from "react";
+import React, { useEffect } from "react";
+import {useParams} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { getDetailGames } from "../../redux/action";
+import style from './Detail.module.css'
 
+const Detail = (props) =>{
 
-const Detail=()=>{
+    const dispatch = useDispatch();
+    const {id} = useParams();
 
-    const {id}=useParams();
-    const dispatch= useDispatch();
-
-    useEffect(()=> dispatch (getDetailGames(id)),[dispatch, id])
+    useEffect(() =>{
+        dispatch(getDetailGames(id));
+    }, [dispatch, id]);
     
-    const videogame = useSelector(state=>state.detailGame)
+    const game = useSelector((state) => state.detailGame)
     
     return (
-        <div>
-            <div>
-                <h1>{videogame.name}</h1>
+        <div className={style.conte}>{}
+            <div className={style.title}>
+                <h1>{game.name}</h1>
             </div>
-            
-            <p>{videogame.description}</p>
-            
+            <div className={style.imag}>
+                <img src={game.background_image} alt={game.name} />
+            </div>
+            <div className={style.desc}>
+                <p dangerouslySetInnerHTML={ {__html:game.description}}></p>
+            </div>
+            <div className={style.gpr}>
             <div>
-                <div>
-                    <h2>Generos </h2>
-                    <ul>{videogame.genres?.map(g=>(<li><p>{g}</p></li>))}</ul>
-                </div>
-                <div>
-                    <h2>Fecha de lanzamiento </h2>
-                    {videogame.released}
-                </div>
-                <div>
-                    <h2>Rating </h2> 
-                    {videogame.rating}
-                </div>
-                <div>
-                    <h2>Plataformas </h2> 
-                    <ul>{videogame.platforms?.map(p=>(<li>{p}</li>))}</ul>
-                </div>
+                <h2>Genres</h2>
                 
             </div>
+            <div>
+                <h2>Platforms</h2>
+                
+            </div>
+            <div>
+                <h2>Rating</h2>
+                <p>{game.rating}</p>
+            </div>
+            </div>
+
         </div>
     )
 }

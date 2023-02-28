@@ -1,0 +1,41 @@
+.prenex{
+    background-color: rgb(34, 32, 32);
+    width: 80px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #ffffff91;
+}
+
+.prenex:hover{
+    background-color: rgb(68, 65, 65);
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.num{
+    background-color: rgb(34, 32, 32);
+    width: 1.5rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ffffff91;
+}
+
+.num:hover{
+    background-color: rgb(68, 65, 65);
+}
+
+.navcont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; 
+}

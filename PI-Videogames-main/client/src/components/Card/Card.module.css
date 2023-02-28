@@ -1,14 +1,14 @@
 .card{
     border-radius: 15px;
     box-shadow: 5px 0 10px 0 rgba(54, 53, 53, 0.342);
-    width: 300px;
+    width: 330px;
     height: 350px;
     margin: 40px;
     background-color: rgb(37, 35, 35);
 }
 
 .imag img{
-    width: 300px;
+    width: 330px;
     height: 200px; 
     border-radius: 15px 15px 0 0;
     margin: 0 20px 0 0;
@@ -23,10 +23,11 @@
     width: 200px;
 }
 
-.text p{
+.text ul{
     position: relative;
-    padding:  20px;
+    padding:  0px;
     color: whitesmoke;
-    font-size: medium;
+    font-size: small;
     font-weight: bolder;
+    list-style: none;
 }

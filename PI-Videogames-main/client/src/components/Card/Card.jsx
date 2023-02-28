@@ -1,14 +1,14 @@
 import style from './Card.module.css'
 
-const Card = (props) => {
+const Card = ({id, name, background_image, genres}) => {
     return(
         <div className={style.card}>
             <div className={style.imag}>
-                <img src={props.background_image} alt={props.name} />
+                <img src={background_image} alt={name} />
             </div>
             <div className={style.text}>
-                <a href='/detail'>{props.name}</a>
-                <p>{props.genres}</p>
+                <a href={`/detail/${id}`}>{name}</a>
+                <ul>{genres.map(g => (<li>{g}</li>))}</ul>
             </div>
         </div>
     )

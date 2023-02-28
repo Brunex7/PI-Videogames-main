@@ -1,10 +1,12 @@
 
 .container h1{
+    display: flex;
     position: fixed;
-    right: 0;
-    font-size: x-large;
-    width: 300px;
+    text-align: left;
+    font-size: xx-large;
+    width: 400px;
     margin: 30px;
+    margin-left: 80px;
     color: white;
 }
 
@@ -12,6 +14,7 @@
     position: fixed;
     top: 260px;
     margin: 30px;
+    margin-left: 80px;
     width: 500px;
     font-size: x-large;
     text-align: left;
@@ -23,6 +26,7 @@
     position: fixed;
     top: 370px;
     margin: 30px;
+    margin-left: 80px;
     width: 500px;
     text-align: left;
     font-size: x-large;
@@ -31,18 +35,20 @@
 }
 
 .container img{
-    position: fixed;
+    display: flex;
+    margin-left: 965px;
     bottom: 185px;
-    border-radius: 0 0 0 200px ;
-    width: 800px;
+    width: 400px;
+    height: 650px;
 }
 
 .container a{
     position: fixed;
     left: 0;
     margin: 30px;
+    margin-left: 80px;
     top: 420px;
-    background-color: rgb(206, 193, 12);
+    background-color: rgb(240, 169, 17);
     color: whitesmoke;
     font-size: large;
     border: 0;
@@ -55,8 +61,10 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     font-size: x-large;
+    font-weight: bold;
 }
 
 .container a:hover{
-    background-color: rgb(160, 151, 27);
+    background-color: rgb(236, 202, 7);
+    border: 1px solid whitesmoke;
 }

@@ -1,14 +1,14 @@
 import Card from "../Card/Card";
-import { useSelector } from 'react-redux'
 import style from './CardContainer.module.css'
-const CardContainer = () =>{
+const CardContainer = ({currentGame}) =>{
 
-    const games = useSelector(state => state.games);
     
     return(
         <div className={style.container}>
-            {games.map(g =>{
-                return <Card 
+            {currentGame.map(g =>{
+                return <Card
+                key={g.id}
+                id={g.id}
                 name = {g.name}
                 background_image = {g.background_image}
                 genres = {g.genres}
@@ -16,6 +16,6 @@ const CardContainer = () =>{
             })}
         </div>
     )
-}
+};
 
 export default CardContainer;

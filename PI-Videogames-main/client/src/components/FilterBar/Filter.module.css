@@ -1,0 +1,23 @@
+.conte{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+    align-items: center;
+    margin-top: 140px;
+    position: absolute;
+    display: flex;
+    right: 70px;
+    top: 40px;
+    width: 400px;
+}
+
+.nogr{
+    display: flex;
+    background-color: rgb(34, 32, 32);
+    width: 80px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 0 5px 0 5px;
+    color: rgb(160, 160, 160);
+    font-weight: 600;
+}
