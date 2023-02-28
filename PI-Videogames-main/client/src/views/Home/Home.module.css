@@ -28,3 +28,19 @@
     margin: 50px;
     margin-top: 90px;
 }
+
+@media (max-width: 900px){
+    .title{
+        position: absolute;
+        display: flex;
+        text-align: center;
+        font-size: large;
+        color: white;
+        top: 80px;
+    }
+
+    .p{
+        display: none;
+    }
+}
+

@@ -68,3 +68,72 @@
     background-color: rgb(236, 202, 7);
     border: 1px solid whitesmoke;
 }
+
+@media (max-width: 900px){
+    .container h1{
+        display: flex;
+        position: fixed;
+        text-align: left;
+        font-size:xx-large;
+        font-weight: bold;
+        width: 800px;
+        margin: 80px;
+        margin-left: 50px;
+        color: white;
+    }
+
+    .container h2{
+        position: fixed;
+        top: 500px;
+        margin: 80px;
+        margin-left: 50px;
+        width: 500px;
+        font-size: xx-large;
+        text-align: left;
+        font-weight: bold;
+        color: white;
+    }
+
+    .container p{
+        position: fixed;
+        top: 700px;
+        margin: 80px;
+        margin-left: 50px;
+        width: 500px;
+        text-align: left;
+        font-size: xx-large;
+        font-weight:400;
+        color: white;
+    }
+
+    .container img{
+        display: flex;
+        margin-left: 255px;
+        bottom: 185px;
+        width: 550px;
+        height: 1000px;
+    }
+    
+
+    .container a{
+        position: fixed;
+        left: 0;
+        margin: 80px;
+        margin-left: 50px;
+        top: 820px;
+        background-color: rgb(32, 32, 32);
+        color: rgb(241, 193, 32);
+        font-size: xx-large;
+        border: 0;
+        border-radius: 10px;
+        text-decoration: none;
+        padding:  10px;
+        width: 650px;
+        height: 60px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+        font-size: x-large;
+        font-weight: bold;
+    }
+}

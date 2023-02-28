@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {orderByName, filterCreated, filterByGenre, orederByRating} from '../../redux/action'
 import { useDispatch, useSelector} from 'react-redux';
 import style from "./Filter.module.css";
@@ -7,10 +7,13 @@ const Filters = () =>{
 
     const allGenres = useSelector(state => state.allGenres)
 
+    const [order, setOrder] = useState('')
+
     const dispatch = useDispatch();
 
     const handlerSortByName = (e) =>{
         dispatch(orderByName(e.target.value))
+        setOrder(`Ordered ${e.target.value}`)
     };
 
     const handlerFilterGenres = (e) =>{
@@ -19,6 +22,7 @@ const Filters = () =>{
 
     const handlerOrderByRating = (e) =>{
         dispatch(orederByRating(e.target.value))
+        setOrder(`Ordered ${e.target.value}`)
     }
 
     const handlerFilterCreate = (e) =>{
