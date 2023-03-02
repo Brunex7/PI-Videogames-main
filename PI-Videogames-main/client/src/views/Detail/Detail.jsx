@@ -7,11 +7,11 @@ import style from './Detail.module.css'
 const Detail = (props) =>{
 
     const dispatch = useDispatch();
-    const {id} = useParams();
+    
 
     useEffect(() =>{
-        dispatch(getDetailGames(id));
-    }, [dispatch, id]);
+        dispatch(getDetailGames(props.match.params.id));
+    }, [props.match.params.id],[dispatch]);
     
     const game = useSelector((state) => state.detailGame)
     

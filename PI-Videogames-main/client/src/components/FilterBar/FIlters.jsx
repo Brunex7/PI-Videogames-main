@@ -19,11 +19,13 @@ const Filters = () =>{
     const handlerFilterGenres = (e) =>{
         dispatch(filterByGenre(e.target.value))
     }
+    
 
     const handlerOrderByRating = (e) =>{
         dispatch(orederByRating(e.target.value))
         setOrder(`Ordered ${e.target.value}`)
     }
+    console.log(handlerSortByName);
 
     const handlerFilterCreate = (e) =>{
         dispatch(filterCreated(e.target.value))

@@ -1,27 +1,17 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getAllGenres, postGames } from '../../redux/action';
 import style from './Form.module.css'
 
-function validate(input) {
-    let errors = {};
-    if (!input.name) {
-      errors.name = "Debes ingresar un nombre";
-    } else if (!input.description) {
-      errors.description = "Debes ingresar una descripción";
-    }
-    return errors;
-}
 
 const Form = () =>{
 
     const dispatch = useDispatch();
-    const history = useHistory()
+    const history = useHistory();
     const genres = useSelector((state) => state.allGenres);
-    const [error, setError] = useState({})
-
+    
+    
     const [form, setForm] = useState({
         name: '',
         image:'',
@@ -31,6 +21,20 @@ const Form = () =>{
         rating:'',
         genres:[],
     });
+    
+    useEffect(() => {
+        dispatch(getAllGenres());
+    },[dispatch]);
+    
+    const [errors, setErrors] = useState({})
+
+    const validate = (form)=>{
+        if(form.name.length<1){
+            setErrors({...errors, name: 'Videogame name is required'})
+        }else if(form.rating<0.0 || form.rating>10.0){
+            setErrors({...errors, rating:'Rating should be more than 0 and less than 11'})
+        }
+    }
 
     const handleDelete = (el) =>{
         setForm({
@@ -44,6 +48,7 @@ const Form = () =>{
         const value = event.target.value;
 
         setForm({ ...form, [property]:value})
+        validate(form)
     };
 
     const handleSelect = (e) =>{
@@ -56,27 +61,26 @@ const Form = () =>{
     const submitHandler = (event) =>{
         event.preventDefault();
         dispatch(postGames(form));
-        alert("VideoJuego Creado");
+        errors ? alert("Error! incorrect data, please check") : alert("New Videogame created");
         setForm({
-            name: "",
-            description: "",
-            released: "",
-            rating: "",
-            genres: [],
-            platforms: [],
+            name: '',
+            image:'',
+            description:'',
+            platforms:[],
+            relased:'',
+            rating:'',
+            genres:[],
         });
         history.push("/home"); 
     };
 
-    useEffect(() => {
-        dispatch(getAllGenres());
-    },[dispatch]);
 
     const randomPlatforms = [
         "PC",
         "PS2",
         "PS3",
         "PS4",
+        "PS5",
         "XBOX",
         "SWITCH",
         "XBOX ONE",
@@ -93,7 +97,7 @@ const Form = () =>{
             <div className={style.lab}>
                 <label>Name: </label>
                 <input type="text" value={form.name} onChange={changeHandler} name='name' />
-                {error.name && <p>{error.name}</p>}
+                {errors.name && <span>{errors.name}</span>}
             </div>
             <div className={style.lab}>
                 <label>Image: </label>
@@ -102,7 +106,6 @@ const Form = () =>{
             <div className={style.lab}>
                 <label>Description: </label>
                 <input type="text" value={form.description} onChange={changeHandler} name='description' />
-                {error.description && <p>{error.description}</p>}
             </div>
             <div>
                 <label className={style.title}>Platform: </label>
@@ -121,6 +124,7 @@ const Form = () =>{
             <div className={style.lab}>
                 <label>Rating: </label>
                 <input type="text" value={form.rating} onChange={changeHandler} name='rating' />
+                {errors.rating && <span>{errors.rating}</span>}
             </div>
             <div>
                 <label className={style.title}>Genre: </label>
