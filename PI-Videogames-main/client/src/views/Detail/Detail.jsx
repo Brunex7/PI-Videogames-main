@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import {useParams} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailGames } from "../../redux/action";
 import style from './Detail.module.css'
@@ -11,7 +10,7 @@ const Detail = (props) =>{
 
     useEffect(() =>{
         dispatch(getDetailGames(props.match.params.id));
-    }, [props.match.params.id],[dispatch]);
+    },[dispatch, props.match.params.id]);
     
     const game = useSelector((state) => state.detailGame)
     
@@ -27,17 +26,21 @@ const Detail = (props) =>{
                 <p dangerouslySetInnerHTML={ {__html:game.description}}></p>
             </div>
             <div className={style.gpr}>
-            <div>
+            <div className={style.gen}>
                 <h2>Genres</h2>
-                
+                <ul>{game.genres && game.genres?.map(g => (<p key ={g.id} >{g.name}</p>))}</ul>
             </div>
-            <div>
+            <div className={style.plat}>
                 <h2>Platforms</h2>
-                
+                <ul>{game.platforms?.map(el => el.platform.name).toString()}</ul>
             </div>
-            <div>
+            <div> 
                 <h2>Rating</h2>
                 <p>{game.rating}</p>
+            </div>
+            <div> 
+                <h2>Relased</h2>
+                <p>{game.released}</p>
             </div>
             </div>
 

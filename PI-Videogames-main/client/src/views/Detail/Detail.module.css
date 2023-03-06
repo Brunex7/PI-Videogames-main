@@ -8,6 +8,7 @@
 .imag img{
     display: flex;
     width: 1200px;
+    max-height:700px;
     margin-left: 70px;
 }
 
@@ -22,10 +23,11 @@
 
 .desc{
     position: absolute;
+    font-size: small;
     display: flex;
     width: 1100px;
     color: white;
-    top:900px;
+    margin-top: 700px;
     margin-left: 120px;
 }
 
@@ -37,4 +39,22 @@
     color: white;
     top:1200px;
     margin-left: 120px;
+}
+
+.gen ul{
+    position: relative;
+    text-align: center;
+    width: 90px;
+    padding:  0px;
+    color: whitesmoke;
+    list-style: none;
+}
+
+.plat ul{
+    position: relative;
+    text-align: center;
+    width: 90px;
+    padding:  0px;
+    color: whitesmoke;
+    list-style: none;
 }

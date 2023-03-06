@@ -11,16 +11,16 @@
     border-radius: 0 0 15px 15px ;
     box-shadow: 5px 0 10px 0 rgba(54, 53, 53, 0.342);
     width: 330px;
-    height: 150px;
+    height: 115px;
     margin: 40px;
     background-color: rgb(37, 35, 35);
     margin-top: 0px;
     transition: all 300ms;
 }
 
-/* .text:hover{
-    height: 150px;
-} */
+.text:hover{
+    height: 130px;
+}
 
 .text a{
     text-decoration: none;

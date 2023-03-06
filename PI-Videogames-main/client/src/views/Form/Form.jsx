@@ -96,16 +96,16 @@ const Form = () =>{
             <div className={style.form}>
             <div className={style.lab}>
                 <label>Name: </label>
-                <input type="text" value={form.name} onChange={changeHandler} name='name' />
+                <input type="text" value={form.name} onChange={changeHandler} name='name' autoComplete='off' />
                 {errors.name && <span>{errors.name}</span>}
             </div>
             <div className={style.lab}>
                 <label>Image: </label>
-                <input type="text" value={form.image} onChange={changeHandler} name='image' />
+                <input type="text" value={form.image} onChange={changeHandler} name='image' autoComplete='off' />
             </div>
             <div className={style.lab}>
                 <label>Description: </label>
-                <input type="text" value={form.description} onChange={changeHandler} name='description' />
+                <input type="text" value={form.description} onChange={changeHandler} name='description' autoComplete='off' />
             </div>
             <div>
                 <label className={style.title}>Platform: </label>
@@ -119,11 +119,11 @@ const Form = () =>{
             </div>
             <div className={style.lab}>
                 <label>Relased: </label>
-                <input type="text" value={form.relased} onChange={changeHandler} name='relased' />
+                <input type="text" value={form.relased} onChange={changeHandler} name='relased' autoComplete='off' />
             </div>
             <div className={style.lab}>
                 <label>Rating: </label>
-                <input type="text" value={form.rating} onChange={changeHandler} name='rating' />
+                <input type="text" value={form.rating} onChange={changeHandler} name='rating' autoComplete='off' />
                 {errors.rating && <span>{errors.rating}</span>}
             </div>
             <div>

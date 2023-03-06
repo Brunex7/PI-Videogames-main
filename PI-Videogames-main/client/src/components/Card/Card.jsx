@@ -1,8 +1,8 @@
 import style from './Card.module.css'
 
-const Card = ({id, name, background_image, genres}) => {
+const Card = ({id, key, name, background_image, genres}) => {
     return(
-        <div>
+        <div key={key}>
 
             <div className={style.imag}>
                 <img src={background_image} alt={name} />

@@ -25,15 +25,16 @@ const Filters = () =>{
         dispatch(orederByRating(e.target.value))
         setOrder(`Ordered ${e.target.value}`)
     }
-    console.log(handlerSortByName);
+    
 
     const handlerFilterCreate = (e) =>{
         dispatch(filterCreated(e.target.value))
     }
+    console.log(filterCreated);
 
     return(
         <div className={style.conte}>
-            <select className={style.nogr} defaultValue="Order" onChange={(e) => handlerSortByName(e)}>
+            <select className={style.nogr} onChange={(e) => handlerSortByName(e)}>
                 <option disabled>Order</option>
                 <option value='asc'>A-Z</option>
                 <option value='desc'>Z-A</option>
