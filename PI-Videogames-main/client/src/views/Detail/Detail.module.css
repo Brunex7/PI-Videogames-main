@@ -43,7 +43,7 @@
 
 .gen ul{
     position: relative;
-    text-align: center;
+    
     width: 90px;
     padding:  0px;
     color: whitesmoke;
@@ -52,8 +52,9 @@
 
 .plat ul{
     position: relative;
-    text-align: center;
-    width: 90px;
+    max-width: 250px;
+    height: 20px;
+    margin: 0 0 20px 0;
     padding:  0px;
     color: whitesmoke;
     list-style: none;

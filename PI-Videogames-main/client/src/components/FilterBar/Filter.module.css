@@ -21,3 +21,7 @@
     color: rgb(24, 24, 24);
     font-weight: 800;
 }
+
+.nogr:hover{
+    background-color: rgb(194, 176, 17);
+}

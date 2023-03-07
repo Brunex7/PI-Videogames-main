@@ -64,7 +64,6 @@ const Form = () =>{
         errors ? alert("Error! incorrect data, please check") : alert("New Videogame created");
         setForm({
             name: '',
-            image:'',
             description:'',
             platforms:[],
             relased:'',

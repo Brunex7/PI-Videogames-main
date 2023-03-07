@@ -47,19 +47,19 @@ export const postGames = () =>{
     }
 }
 
-export const filterByGenre = (payload) =>{
-    return { type: FILTER_BY_GENRE, payload};
+export const filterByGenre = (state) =>{
+    return ({ type: FILTER_BY_GENRE, payload:state});
 };
 
-export const filterCreated = (payload) =>{
-    return { type: FILTER_CREATED, payload};
+export const filterCreated = (state) =>{
+    return ({ type: FILTER_CREATED, payload:state});
 };
 
-export const orederByRating = (payload) =>{
-    return { type: ORDER_BY_RATING, payload}
+export const orederByRating = (state) =>{
+    return ({ type: ORDER_BY_RATING, payload:state})
 }
 
-export const orderByName = (payload) =>{
-    return { type: ORDER_BY_NAME, payload}
+export const orderByName = (state) =>{
+    return ({ type: ORDER_BY_NAME, payload: state})
 }
 

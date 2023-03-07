@@ -53,51 +53,34 @@ const rootRoducer = (state = initialState, action ) =>{
                     : allGames.filter((e) => e.created === false)
             return {...state, games: action.payload === 'all' ? allGames : filterOring}
 
-        case ORDER_BY_NAME:
-            let arrName = action.payload === 'asc'
-            ? state.allVideogames.sort(function(a, b){
-                if(a.name < b.name){
-                    return 1
+        case ORDER_BY_NAME: return{
+            ...state,
+            games: [...state.games].sort((a,b) =>{
+                if(action.payload === 'asc'){
+                    if (a.name < b.name) return -1;
+                    if (a.name > b.name) return 1;
+                    return 0;
+                } else {
+                    if (a.name < b.name) return 1;
+                    if (a.name > b.name) return -1;
+                    return 0;
                 }
-                if(a.name > b.name){
-                    return -1
-                }
-                return 0
             })
-            : state.allVideogames.sort(function(a, b){
-                if(a.name > b.name){
-                    return -1
+        }
+        case ORDER_BY_RATING: return{
+            ...state,
+            games: [...state.games].sort((a,b) =>{
+                if(action.payload === 'asc'){
+                    if (a.rating < b.rating) return -1;
+                    if (a.rating > b.rating) return 1;
+                    return 0;
+                } else {
+                    if (a.rating < b.rating) return 1;
+                    if (a.rating > b.rating) return -1;
+                    return 0;
                 }
-                if(a.name < b.name){
-                    return 1
-                }
-                return 0
             })
-            console.log(arrName)
-            return{...state, games: arrName}
-
-        case ORDER_BY_RATING:
-            let arrRating = action.payload === 'asc' 
-            ? state.allVideogames.sort(function(a,b){
-                if(a.rating < b.rating){
-                    return -1
-                }
-                if(a.rating > b.rating){
-                    return 1
-                }
-                return 0
-            }) 
-            : state.allVideogames.sort(function(a,b){
-                if(a.rating < b.rating){
-                    return 1
-                }
-                if(a.rating > b.rating){
-                    return -1
-                }
-                return 0
-            })
-            console.log(arrRating);
-            return{...state, games: arrRating};
+        }
 
             default:
                 return {...state};
