@@ -2,11 +2,12 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    width: 1300px;
+    width: 1000px;
     flex-wrap: wrap;
     background-color: rgb(15, 15, 15);
     box-shadow:0 0 10px rgba(0, 0, 0, 0.13);
     border-radius: 10px;
+    margin-left: 20px;
 }
 
 @media (max-width: 900px){

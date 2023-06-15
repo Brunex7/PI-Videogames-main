@@ -1,0 +1,30 @@
+.container{
+    background-color: rgb(15, 15, 15);
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.container h1{
+    color: rgb(100, 100, 100);
+}
+.container ul{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.container p{
+    display: flex;
+    margin-right: 40px;
+    padding: 10px;
+    margin-top: -20px;
+    color: rgb(100, 100, 100);
+    font-weight: 600;
+}
+
+.container p:hover{
+    background-color: rgb(25, 25, 25);
+    border-radius: 5px;
+    color: whitesmoke;
+}

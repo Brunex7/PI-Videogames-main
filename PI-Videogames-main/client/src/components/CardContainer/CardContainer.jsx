@@ -1,9 +1,12 @@
 import Card from "../Card/Card";
+import Sidebar from "../SideBar/SideBar";
 import style from './CardContainer.module.css'
 const CardContainer = ({currentGame}) =>{
 
     
     return(
+        <>
+        <Sidebar />
         <div className={style.container}>
             {currentGame.map(g =>{
                 return <Card
@@ -15,6 +18,7 @@ const CardContainer = ({currentGame}) =>{
                 />
             })}
         </div>
+        </>
     )
 };
 

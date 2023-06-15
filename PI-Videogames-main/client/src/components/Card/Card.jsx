@@ -2,7 +2,7 @@ import style from './Card.module.css'
 
 const Card = ({id, key, name, background_image, genres}) => {
     return(
-        <div key={key}>
+        <div key={key} className={style.card}>
 
             <div className={style.imag}>
                 <img src={background_image} alt={name} />
@@ -10,7 +10,7 @@ const Card = ({id, key, name, background_image, genres}) => {
 
             <div className={style.text}>
                 <a href={`/detail/${id}`}>{name}</a>
-                <ul>{genres.map(g => (<li>{g}</li>))}</ul>
+                <p>{genres.map(g => (<p>{g}</p>))}</p>
             </div>
 
         </div>
