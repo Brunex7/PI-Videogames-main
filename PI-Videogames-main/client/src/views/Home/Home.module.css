@@ -4,7 +4,7 @@
     left: 70px;
     font-size: xx-large;
     color: white;
-    top: 40px;
+    top: 90px;
 }
 .p{
     position: absolute;
@@ -12,15 +12,14 @@
     left: 75px;
     font-size: x-large;
     color: white;
-    top: 140px;
+    top: 190px;
 }
 
 .container{
     display: flex;
     justify-content: space-around;
-    max-width: 1500px;
     align-items: center;
-    margin-top: 140px;
+    margin-top: 50px;
 }
 
 .cards{

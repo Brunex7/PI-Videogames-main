@@ -13,14 +13,14 @@ const Sidebar = () => {
   }
 
   return (
-    <div className={style.container}>
-      <h1>GENEROS</h1>
+    <div className={`${style.container} ${style.hideOnDesktop}`}>
+      <h1>GENRES</h1>
       <ul>
-          <p onClick={() => handleClick('all')}>All Games</p>
+          <li onClick={() => handleClick('all')}>All Games</li>
           {allGenres?.map((g) =>(
-            <p key={g.id} onClick={() => handleClick(g.name)}>
+            <li key={g.id} onClick={() => handleClick(g.name)}>
               {g.name}
-            </p>            
+            </li>            
           ))}
       </ul>
     </div>

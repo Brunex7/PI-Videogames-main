@@ -1,17 +1,10 @@
-.conte{
+.conte {
     display: flex;
     justify-content: space-between;
-    max-width: 1500px;
-    align-items: center;
-    margin-top: 140px;
-    position: absolute;
-    display: flex;
-    right: 70px;
-    top: 40px;
-    width: 400px;
-}
+    width: 300px;
+} 
 
-.nogr{
+.nogr {
     display: flex;
     background-color: rgb(240, 218, 17);
     width: 80px;
@@ -21,7 +14,24 @@
     color: rgb(24, 24, 24);
     font-weight: 800;
 }
-
-.nogr:hover{
+  
+.nogr:hover {
     background-color: rgb(194, 176, 17);
 }
+  
+.hideOnDesktop {
+    display: none;
+}
+  
+@media (max-width: 768px) {
+    .conte {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .hideOnDesktop {
+      display: flex;
+    }
+}
+  

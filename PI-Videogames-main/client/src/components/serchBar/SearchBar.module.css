@@ -1,48 +1,51 @@
-.inp{
+/* Estilos para pantalla grande */
+.inp {
     color: white;
-    font-size: medium;
-    font-weight:600;
+    font-size: small;
     border: 1px solid rgba(245, 245, 245, 0.034);
     width: 400px;
     height: 30px;
     background-color: rgb(34, 32, 32);
     border-radius: 5px 0 0 5px;
 }
-.inp:hover{
+
+.inp:hover {
     background-color: rgb(68, 65, 65);
 }
 
-.button{
+.button {
     font-size: small;
-    font-weight: 600;
+    font-weight: 200;
     border-radius: 0 5px 5px 0;
-    color: rgba(255, 255, 255, 0.479) ;
+    color: rgba(255, 255, 255, 0.479);
     height: 34px;
     background-color: rgb(34, 32, 32);
     border: 1px solid rgba(245, 245, 245, 0.034);
 }
 
-.button:hover{
+.button:hover {
     background-color: rgb(68, 65, 65);
 }
 
-@media (max-width: 900px){
-    .inp{
+/* Estilos para pantallas más pequeñas (menos de 900px) */
+@media (max-width: 750px) {
+    .inp {
         color: white;
         font-size: x-small;
-        font-weight:600;
         border: 1px solid rgba(245, 245, 245, 0.034);
         width: 100px;
         height: 30px;
         background-color: rgb(34, 32, 32);
-        border-radius: 5px 0 0 5px;
+        border-radius: 5px;
+        margin-bottom: 10px; /* Agrega espacio entre los elementos */
     }
-    .button{
+
+    .button {
         font-size: xx-small;
         font-weight: 600;
-        border-radius: 0 5px 5px 0;
-        color: rgba(255, 255, 255, 0.479) ;
-        width: 45px;
+        border-radius: 5px;
+        color: rgba(255, 255, 255, 0.479);
+        width: 100px;
         height: 34px;
         background-color: rgb(34, 32, 32);
         border: 1px solid rgba(245, 245, 245, 0.034);

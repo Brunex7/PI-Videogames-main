@@ -29,28 +29,27 @@ const Home = () =>{
     
     return(
         <>
-        <div className={style.container}>
-            <div className={style.title}>
-                <h1>GAME LIST</h1>
-            </div>
-            <div className={style.p}>
-                <p>The best games are here.</p>
-            </div>
-            <div>
-                <Filters/>
-            </div>
-            <div className={style.cards}>
-                <CardContainer currentGame = {currentGame} />
-            </div>
-        </div>
-        <div>
-                    <Paging className ={style.b}
-                        gamePrePage = {gamePrePage}
-                        games = {games.length}
-                        paging = {paging} 
-                    />
-                </div>
-        </>
+  <div className={style.container}>
+    <div className={style.title}>
+      <h1>GAME LIST</h1>
+    </div>
+    <div className={style.p}>
+      <p>The best games are here.</p>
+    </div>
+    <div className={style.cards}>
+      <CardContainer currentGame={currentGame} />
+    </div>
+  </div>
+  <div>
+    <Paging
+      className={style.b}
+      gamePrePage={gamePrePage}
+      games={games.length}
+      paging={paging}
+    />
+  </div>
+</>
+
     )
 }
 
